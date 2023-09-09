@@ -1,0 +1,651 @@
+                       
+                           
+                                                   ***DAY-7:Dictionaries And Sets***
+
+
+#Examples:
+
+#1 Create a dictionary to store information about a person (name, age, address).
+"""person = {'name':'karishma','age':28,'add':'pune'}
+print(person)""" 
+
+
+#2 Add a new key-value pair to an existing dictionary
+"""dict = {'key1':'book','key2':'horror'}
+print("original dict:",dict)
+dict['3'] = 'is'
+dict['4'] = 'add'
+print("updated:",dict)"""
+
+
+#3 Create a set of unique numbers from a list of numbers
+"""def unique_num(duplicate):
+	uni_num_set = set(duplicate)
+	uni_num_list = list(uni_num_set)
+	return uni_num_list
+dup_list = [1,2,4,3,6,2,1,6]
+print(unique_num(dup_list))"""
+
+
+#Practice Questions:
+
+#1 Given two dictionaries, merge them into a single dictionary
+"""def merge(d1,d2):
+	res = {**d1,**d2}
+	return res
+d1 = {1:'aa',2:'bb'}
+d2 = {3:'cc',4:'dd'}
+d = merge(d1,d2)
+print(d)"""
+
+
+#2 Write a program that finds the most frequent element in a list
+"""def most_frequent(list):
+	counter = 0
+	num = list[0]
+	for i in list:
+		current = list.count(i)
+		if(current > counter):
+			counter = current
+			num = i
+	return num
+list = [2,6,7,2,9]
+print(most_frequent(list))"""
+
+
+#3 Implement a function that removes a key-value pair from a dictionary
+"""dict1 = {1:"one",2:"two",3:"three",4:"four"}
+print("Original dict: ",dict1)
+del dict1[3]
+print("dict after del: ",dict1)"""
+
+
+#4 Create a program that checks if two sets have any elements in common
+"""s1 = {1,2,3,4,9}
+  s2 = {2,3,5,7,8}
+  if s1.isdisjoint(s2):      #### isdisjoint() if the sets are disjoint meaning they have no elements in common
+  	print("two sets No items in common")
+  else:
+  	print("two sets items in common")
+  	print(s1.intersection(s2))    ### if sets are not disjoint meaning they sets have common elements"""  
+
+
+
+#5 Given a list of dictionaries, find the dictionary with the highest value for a specific key
+"""list_dict = [{"welcome": 8, "back":1, "code":9},
+			{"welcome": 2, "back":9, "code":1},
+			{"welcome": 5, "back":10, "code":7}]
+print("the origonal list: " + str(list_dict))
+res = {}
+for dic in list_dict:
+	for key,val in dic.items():
+		if key in res:
+			res[key] = max(res[key], val)
+		else:
+			res[key] = val
+print("all highest value: " + str(res))"""
+
+
+
+#6 Write a Python program that counts the number of occurrences of each character in a given string using a dict
+"""inp_str = "gobabygo"
+freq = {}
+for i in inp_str:
+	if i in freq:
+		freq[i] += 1
+	else:
+		freq[i] = 1
+print("Occurances of each character :\n " + str(freq))"""
+
+
+
+#7 Given two sets, find the union, intersection, and difference between them
+"""A = {1,8,4,7,9}
+B = {1,4,9,0,8}
+print("union :", A | B)
+print("intersection :", A & B)
+print("Difference :", A - B)"""
+
+
+
+#8 Create a function that takes a list of dictionaries and sorts them based on a specified key
+"""list = [{"subject":"english","std":5},
+		{"subject":"history","std":9},
+		{"subject":"geo","std":6}]
+print("the list sorting by std :")
+print(sorted(list, key=lambda i: i['std']))
+print("\r")
+print("the list sorting by subject and std :")
+print(sorted(list, key=lambda i: (i['std'], i['subject'])))"""
+
+
+#unsolved
+#9 Write a program that finds the average value of all the elements in a list of dictionaries
+list_dict = [{"abc":3, "is":2},{"alphabates":5}]
+print("the original dict: " + str(list_dict))
+res = 0
+for val in list_dict.items():
+	res += val
+res = res / len(list_dict)
+print("the average :" + str(res))
+
+
+
+#10 Implement a function that takes a list of strings and returns a set of unique characters present in all strings.
+"""def unique(str):
+	s = set(str)
+	return len(s)
+if __name__ == "__main__":
+	S = "uniquestring"
+	print(unique(S))
+
+
+S = "uniquestring"
+a = ""
+for i in S:
+	if i not in a:
+		a += i
+print(len(a))"""
+
+                                      ############################################################
+
+
+                                            ***DAY-9:Object Oriented Programming(OOP)***
+
+
+#Examples:
+
+#1 Create a class to represent a basic calculator with add,subtract, multiply, and divide methods
+"""class calculator:
+	def __init__(self,v1,v2):
+		self.v1 = v1
+		self.v2 = v2
+	def add(self):
+		return self.v1 + self.v2
+	def sub(self):
+		return self.v1 - self.v2
+	def mul(self):
+		return self.v1 * self.v2
+	def div(self):
+		return self.v1 / self.v2
+l = calculator(12,4)
+print(l.add())
+print(l.sub())
+print(l.mul())
+print(l.div())"""
+
+
+#2 Create a class to represent a book with attributes like title, author, and publication year
+"""class book:
+	def __init__(self,title,author,pub_yr):
+		self.title = title
+		self.author = author
+		self.pub_yr = pub_yr
+s = book("The secret","Rhona Byrne",2021)
+print("book title:",s.title)
+print("book author:",s.author)
+print("book publication year:",s.pub_yr)"""
+
+
+
+#3 Define a class for a Circle with methods to calculate its area and circumference.
+"""class circle:
+	def __init__(self,radius):
+		self.radius=radius
+	def getArea(self):
+		print(3.14*self.radius*self.radius)
+	def getcircumference(self):
+		print(self.radius*2*3.14)
+c=circle(20)
+c.getArea()
+c.getcircumference()"""
+
+
+
+#Practice Questions:
+
+#1 Create a class to represent a Student with attributes like name, age, and grades.
+"""class student:
+	def __init__(self,name,age,grd):
+		self.name = name
+		self.age = age
+		self.grd = grd
+s = student("huma",3,"A+")
+print("student name:",s.name)
+print("student age:",s.age)
+print("student grade:",s.grd)"""
+
+
+
+#unsolved
+#2 Given a CSV file with employee details (name, position,salary), create a class to represent an Employee.
+
+
+
+#3 Implement a program that simulates a basic bank account using a BankAccount class
+"""class Bank_Acc:
+	def __init__(self):
+		self.balance = 0
+		print("Hello welcome to the withdrawal & deposit machine")
+	def deposit(self):
+		amount = float(input("Enter amount to deposited:"))
+		self.balance += amount
+		print("amount deposit :",amount)
+	def withdrawal(self):
+		amount = float(input("Enter amount to withdrawal:"))
+		if self.balance>=amount:
+			self.balance -= amount
+			print("\n You withdrawal :", amount)
+		else:
+			print("\n Insufficient balance :")
+	def display(self):
+		print("\n Net balance :", self.balance)
+S = Bank_Acc()
+S.deposit()
+S.withdrawal()
+S.display()
+
+*********** OUTPUT ***********
+Hello welcome to the withdrawal & deposit machine
+Enter amount to deposited:1000
+amount deposit : 1000.0
+Enter amount to withdrawal:500
+
+ You withdrawal : 500.0
+
+ Net balance : 500.0"""
+
+
+
+#4 Write a Python program that uses a Rectangle class to calculate the area and perimeter of a rectangle
+"""class rect():
+	def __init__(self,breadth,length):
+		self.breadth = breadth
+		self.length = length
+	def area(self):
+		return self.breadth * self.length
+	def perimeter(self):
+		return 2 * (self.length * self.breadth)
+		
+r = rect(10,20)
+p = rect(8,20)
+print("area of rectangle: ",r.area())
+print("perimeter of rectangle: ",p.perimeter())"""
+
+
+
+#5 Create a class to represent a Car with attributes like make, model, and year
+"""class car:
+	def __init__(self,make,model,year):
+		self.mk = make
+		self.m = model
+		self.y = year
+		
+	def display(self):
+		print(" make is: " + str(self.mk))
+		print(" model is: " + str(self.m))
+		print(" year is: " + str(self.y))
+x=car("kia","suv",2021)
+x.display()"""
+
+
+
+#6 Given a JSON file with customer data, create a Customer class to store and manipulate the data
+
+
+#7 Write a program that uses a Person class to keep track of a person's name, age, and address
+"""class Person:
+	def __init__(self,name,age,addr):
+		self.name = name
+		self.age = age
+		self.addr = addr
+		
+	def display(self):
+		print(" name of person is: " + str(self.name))
+		print(" person's age is: " + str(self.age))
+		print(" address is: " + str(self.addr))
+x=Person("karishma",28,"pune")
+x.display()"""
+
+
+
+#8 Implement a program that uses a Circle class to calculate the area and circumference of multiple circles
+"""class circle:
+	def __init__(self,radius):
+		self.radius=radius
+	def getArea(self):
+		print(3.14*self.radius*self.radius)
+	def getcircumference(self):
+		print(self.radius*2*3.14)
+c=circle(10)
+c.getArea()
+c.getcircumference()"""
+
+
+
+#9 Given a CSV file with product details (name, price,quantity), create a Product class to manage the data
+
+
+#10 Create a class to represent a Movie with attributes like title, director, and rating
+"""class movie:
+	def __init__(self,title,director,rating):
+		self.t = title
+		self.d = director
+		self.r = rating
+		
+	def display(self):
+		print(" title of movie is: " + str(self.t))
+		print(" who direct the movie is: " + str(self.d))
+		print(" rating of the movie is: " + str(self.r))
+x=movie("judwa","dhavan",4)
+x.display()"""
+
+
+                                 ###################################################################
+
+
+                                           ***DAY-10:Inheritance And Encapsulation***  
+
+
+#Examples:
+
+"""1 Create a base class Animal with a method sound() and create 
+derived classes Dog and Cat with their own sound()."""
+"""class Animal:
+	def sound(self):
+		print("Animal makes a sound")
+class Cat(Animal):
+	def sound(self):
+		print("Cat meow")
+class Dog(Animal):
+	def sound(self):
+		print("Dog barks")
+cat = Cat()
+dog = Dog()
+cat.sound()
+#dog.sound()"""
+
+
+"""2: Implement a class hierarchy to represent different types
+of vehicles (Car, Bike) with their own attributes and
+methods."""
+"""class Vehicle():
+    def __init__(self, color):
+        self.color = color
+    def description(self):
+        print("I'm a", self.color, "Vehicle")
+
+class Car(Vehicle):
+    def __init__(self, color, style):
+        super().__init__(color)    # invoke Vehicle’s __init__() method
+        self.style = style
+    def description(self):
+        print("I'm a", self.color, self.style)
+
+v = Vehicle('Red')
+c = Car('Black', 'SUV')
+v.description()
+c.description()"""
+
+
+"""3: Create a class Person with private attributes and define
+methods to get and set the values of those attributes."""
+"""class Person:
+ 	def __init__(self,name):
+ 		self.__name = name
+ 	def __foo(self):
+ 		print('This is private method')
+ 	def get_name(self):
+ 		return self.__name
+ 	def set_name(self):
+ 		return self.__name
+ G = Person("rocky")
+ S = Person("mateen")
+ print(G.get_name())
+ print(S.set_name())""" 
+
+
+
+#Practice Questions:
+
+"""1 Create a base class Shape with methods to calculate area
+and perimeter, and derive classes Circle and Square"""
+"""class Shape:
+	def __init__(self,breadth,length):
+		self.breadth = breadth
+		self.length = length
+	
+class Circle(Shape):
+	def area_circle(self):
+		return self.breadth * self.length
+	def perimeter_circle(self):
+		return 2 * (self.length * self.breadth)	
+class Square(Shape):
+	def area_square(self):
+		return self.breadth * self.length
+	def perimeter_square(self):
+		return 2 * (self.length * self.breadth)
+C = Circle(10,20)
+P = Square(8,30)
+print("area of Circle:" ,C.area_circle())
+print("perimeter of circle:" ,C.perimeter_circle())
+print("area of Square:" ,P.area_square())
+print("perimeter of Square:" ,P.perimeter_square())"""
+
+
+
+"""2 Implement a class hierarchy to represent different types
+of employees (Manager, Engineer) with their attributes"""
+"""class Employee():
+    def __init__(self, name):
+        self.name = name
+    def description(self):
+        print("I'm a", self.name)
+
+class Manager(Employee):
+    def __init__(self, name, salary):
+        super().__init__(name)    # invoke Vehicle’s __init__() method
+        self.salary = salary
+    def description(self):
+        print("I'm manager ", self.name, self.salary)
+class Engineer(Employee):
+    def __init__(self, name, salary):
+        super().__init__(name)    # invoke Vehicle’s __init__() method
+        self.salary = salary
+    def description(self):
+        print("I'm Engineer", self.name, self.salary)
+
+v = Employee('abc')
+c = Manager('xyz', 40000)
+e = Engineer('mnp',20000)
+v.description()
+c.description()
+e.description()"""
+
+
+
+"""3 Write a Python program that uses inheritance to
+represent a hierarchy of shapes (Triangle, Rectangle, etc.)"""
+"""class Shapes():
+    def __init__(self, side):
+        self.side = side
+    def description(self):
+        print("I'm a", self.side, "sides")
+
+class Triangle(Shapes):
+    def __init__(self, side, point):
+        super().__init__(side)    
+        self.point = point
+    def description(self):
+        print("I'm Triangle I have ", self.side,"sides and", self.point,"corner")
+class Rectangle(Shapes):
+    def __init__(self, side, point):
+        super().__init__(side)    
+        self.point = point
+    def description(self):
+        print("I'm Rectangle I have ", self.side,"sides and", self.point,"corner")
+
+v = Shapes('4')
+c = Triangle('3', '3')
+r = Rectangle('4','4')
+v.description()
+c.description()
+r.description()"""
+
+
+
+"""4 Create a class hierarchy to represent different types of
+animals (Bird, Fish) with their own attributes and methods"""
+"""class Animal():
+    def __init__(self,name ):
+        self.name = name
+    def description(self):
+        print("I'm a", self.name)
+
+class Bird(Animal):
+    def __init__(self, name, sound):
+        super().__init__(name)    
+        self.sound = sound
+    def description(self):
+        print("I'm a", self.name, "make sounds",self.sound)
+class Fish(Animal):
+    def __init__(self, name, type):
+        super().__init__(name)    
+        self.type = type
+    def description(self):
+        print("I'm a", self.name, "i love living in",self.type)
+
+v = Animal('dog')
+c = Bird('dog', 'Bark')
+f = Fish('poplet', 'water')
+v.description()
+c.description()
+f.description()"""
+
+
+
+"""5 Given a JSON file with product details (name, price,quantity), 
+create a Product class with encapsulated attributes"""
+
+
+
+"""6 Implement a program that uses inheritance to represent a
+hierarchy of vehicles (Car, Bike, Truck, etc.)"""
+"""class Vehicle():
+    def __init__(self,name ):
+        self.name = name
+    def description(self):
+        print("Vehicletype is", self.name)
+
+class Car(Vehicle):
+    def __init__(self, name, model):
+        super().__init__(name)    
+        self.model = model
+    def description(self):
+        print("car name is", self.name, "and model is",self.model)
+class Bike(Vehicle):
+    def __init__(self, name, type):
+        super().__init__(name)    
+        self.type = type
+    def description(self):
+        print("my bike is ", self.name, "and its type is",self.type)
+
+v = Vehicle('truck')
+c = Car('kia', 'cruze')
+f = Bike('ktm', 'sportbike')
+v.description()
+c.description()
+f.description()"""
+
+
+# 7 Write a Python program that uses encapsulation to protect sensitive information in a User class.
+#protected member
+"""class Base:
+	def __init__(self):
+		self._a = 2
+
+class Derived(Base):
+	def __init__(self):
+		Base.__init__(self)
+		print("Calling protected member of base class: ",self._a)
+
+		self._a = 3
+		print("Calling modified protected member outside class: ",self._a)
+obj1 = Derived()
+obj2 = Base()
+print("Accessing protected member of obj1: ", obj1._a)
+print("Accessing protected member of obj2: ", obj2._a)"""
+
+
+
+"""8 Create a class hierarchy to represent different types of
+electronics (Phone, Laptop) with their attributes"""
+"""class Electronics():
+    def __init__(self, type):
+        self.type = type
+    def description(self):
+        print("I am used this type of ", self.type,"Electronics")
+
+class Phone(Electronics):
+    def __init__(self, type, color):
+        super().__init__(type)    
+        self.color = color
+    def description(self):
+        print("Phone type is", self.type," in the color", self.color)
+class Laptop(Electronics):
+    def __init__(self, type, model):
+        super().__init__(type)    
+        self.model = model
+    def description(self):
+        print("Laptop in ", self.type,"model is", self.model)
+v = Electronics('ipad')
+p = Phone('realme', 'white')
+l = Laptop('Dell', 'i5 core')
+v.description()
+p.description()
+l.description()"""
+
+"""9 Given a CSV file with employee details (name, position,
+salary), create an Employee class with private attributes"""
+
+
+
+"""10 Implement a program that uses inheritance to represent a
+hierarchy of shapes (Circle, Triangle, Rectangle, etc.)"""
+"""class Shapes():
+    def __init__(self, side):
+        self.side = side
+    def description(self):
+        print("I'm a", self.side, "sides")
+class Circle(Shapes):
+    def __init__(self,side, radius):
+        super().__init__(side)    
+        self.radius = radius
+    def description(self):
+        print("I'm Circle I have ", self.side," sides and", self.radius,"radius")
+class Triangle(Shapes):
+    def __init__(self, side, point):
+        super().__init__(side)    
+        self.point = point
+    def description(self):
+        print("I'm Triangle I have ", self.side,"sides and", self.point,"corner")
+class Rectangle(Shapes):
+    def __init__(self, side, point):
+        super().__init__(side)    
+        self.point = point
+    def description(self):
+        print("I'm Rectangle I have ", self.side,"sides and", self.point,"corner")
+
+v = Shapes('4')
+c = Circle('0','100')
+t = Triangle('3', '3')
+r = Rectangle('4','4')
+v.description()
+c.description()
+t.description()
+r.description()"""
+
+                                             ##########################################################3
+
+
+
